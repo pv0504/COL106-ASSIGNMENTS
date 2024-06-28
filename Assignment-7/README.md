@@ -1,30 +1,9 @@
--- insert the corpus
-In QNA_tool class we created vector (corpus) in which it will store paragraphs.
-- initally we will insert the complete corpus, by passsing four parameters book_code,page
-para,sentence_no,sentence, but here we will store paragraphs.
-,at the same time we are updating the frequency of words.
-
---top k paragraph.
-
-1. first we are preprocessing the question by converting it to small letters.
-2. next we are storing the frequency of the words in the question.(in the vector<Duo>res)
-
-3. now we are preprocessing the question, and checking whether the word is present
-corpus or not(initally we stored the frequency of all the words in corpus)
-
-and the score calculator of a paragraph is sigma f(w)s(w) over all words in the paragraph
-, and the f(w) -> frequency of that word in the paragraph, s(w) = frequency(w) in specific corpus + 1
-/frequency(w) in a general corpus + 1, (frequency in general corpus is given in unigram.csv)
-
-
------ but in the second case , we are using porter stemmer for handing the grammatical 
-errors (for example :- using porter stemmer code, bringing and brings were similar words.)
-
--- insert the corpus :-
-now on inserting the sentence, stem each word of the sentence, and then push the sentence
-in the corpus.
-
--- and in getting top k paragraph, everything is same, only score function is changed.
-Score_para += (internal_word.query_freq * 1000 + freq_wor); 
-// since frequency can this weight as max words 
-in paragraph is 1140//we give priority simultaneos presence of query word than individual freq;
+Search Results Ranking and Querying LLM (Sept, 2023 - Nov, 2023) Developed an advanced algorithm to identify top-k relevant paragraphs from large corpuses, including "The Collected Works of Mahatma Gandhi" and selected works of Maharishi Ramana. 
+Corpus Insertion: In the QNA_tool class, we created a vector (corpus) to store paragraphs. 
+Initially, the entire corpus was inserted by passing four parameters: book_code, page, para, and sentence_no. 
+During this process, the frequency of words was also updated. 
+Top-K Paragraph Ranking: Preprocessed the question by converting it to lowercase. Stored the frequency of words in the question in a vector (vector<Duo>res). 
+Checked if each word in the preprocessed question was present in the corpus, using the previously stored word frequencies. 
+Calculated the score of each paragraph using the formula: ∑ 𝑓 ( 𝑤 ) ⋅ 𝑠 ( 𝑤 ) ∑f(w)⋅s(w) over all words in the paragraph, where 𝑓 ( 𝑤 ) f(w) is the frequency of the word in the paragraph, and 𝑠 ( 𝑤 ) s(w) is the specific corpus frequency + 1 divided by the general corpus frequency + 1 (from unigram.csv). 
+Porter Stemmer Integration: Implemented the Porter Stemmer to handle grammatical variations (e.g., treating "bringing" and "brings" as the same word). 
+During corpus insertion, each word in the sentence was stemmed before being pushed into the corpus. For top-k paragraph ranking, the only change in the scoring function was to prioritize simultaneous presence of query words by using the formula: Score_para += (internal_word.query_freq * 1000 + freq_word), ensuring higher weight for concurrent query word presence.
