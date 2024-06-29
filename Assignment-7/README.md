@@ -30,6 +30,20 @@ Developed an advanced algorithm to identify top-k relevant paragraphs from large
   \]
   ensuring a higher weight for concurrent query word presence.
 
-## Prolog Choice Points
-- **Backtracking Management**: Used "choice points" to manage the decision-making process during backtracking.
-- **Alternative Paths**: Created choice points to track alternative paths when encountering multiple rules or solutions.
+# ------------------------------------------------------------
+Compilation
+To compile the code, use the following command:
+
+g++ tester.cpp dict.cpp search.cpp qna_tool.cpp -o test
+
+This will create an executable file named test.
+
+Execution
+To run the program, use the following command:
+
+./test
+
+Output
+Upon  execution, you will see the output as the five paragraphs we have returned and the chat GPT’s reply.
+
+Please note that the actual output may vary based on the input data and parameters used.
