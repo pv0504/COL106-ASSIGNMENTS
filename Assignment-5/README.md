@@ -1,19 +1,20 @@
-1. Now we will make an epp compiler.
- 
-Created an expression evaluator for the E++ language, supporting fully parenthesized 
-arithmetic infix expressions with custom UnlimitedInt and UnlimitedRational classes 
-to handle arbitrary-sized integers and rational numbers. Implemented a parser to 
-generate unique parse trees and an unbalanced Binary Search Tree (BST) based 
-symbol table to manage variables, facilitating accurate expression parsing and 
-evaluation.
+Expression Evaluator for E++ Language:
 
-In epp compiler class we would create expression tree, for storing the expression
-of infix, we will first parse the expression and store it in parse tree and then after
-the memory for variables present in the parse tree are being allocated through min heap
-.and finally we will generate opcodes which is target language and hence compiler is
-completed
+Supports fully parenthesized arithmetic infix expressions.
+Uses custom UnlimitedInt and UnlimitedRational classes for handling arbitrary-sized integers and rational numbers.
+Parser for Generating Parse Trees:
 
+Parses expressions and generates unique parse trees.
+Utilizes an unbalanced Binary Search Tree (BST) based symbol table to manage variables.
+Expression Tree Creation:
 
+Stores the parsed infix expression in a parse tree.
+Memory Allocation:
 
+Allocates memory for variables present in the parse tree using a min heap.
+Opcode Generation:
 
+Generates opcodes for the target language.
+Compiler Completion:
 
+Combines the expression tree creation, memory allocation, and opcode generation to complete the compiler.
