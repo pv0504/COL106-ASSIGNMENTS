@@ -8,7 +8,7 @@ Developed an advanced algorithm to identify top-k relevant paragraphs from large
 
 ### Corpus Insertion
 - **Vector Storage**: Created a vector (corpus) to store paragraphs.
-- **Parameter Passing**: Inserted the entire corpus by passing four parameters: `book_code`, `page`, `para`, and `sentence_no`.
+- **Parameter Passing**: Inserted the entire corpus by passing four parameters: `book_code`, `page`, `para`. Here you are storing 3d vector, hence 
 - **Frequency Update**: Updated the frequency of words during the corpus insertion process.
 
 ### Top-K Paragraph Ranking
